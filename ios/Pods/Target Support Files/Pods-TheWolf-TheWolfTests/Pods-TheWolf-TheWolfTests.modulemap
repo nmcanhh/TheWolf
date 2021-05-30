@@ -1,0 +1,6 @@
+module Pods_TheWolf_TheWolfTests {
+  umbrella header "Pods-TheWolf-TheWolfTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
