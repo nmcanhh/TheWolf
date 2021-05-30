@@ -1,9 +1,17 @@
-import React, {useState} from 'react';
+import React, {useState, useCallback} from 'react';
 import { View, Image, FlatList, StyleSheet, useWindowDimensions } from 'react-native';
 
-const ImageCarousel = ({images}: {images: [string]}) => {
+const ImageCarousel = ({images}: {images: string[]}) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const windowWidth = useWindowDimensions().width;
+
+    const onFlatlistUpdate = useCallback(({viewableItems}) => {
+        if (viewableItems.length > 0){
+        setActiveIndex(viewableItems[0].index || 0);
+    }
+    console.log(viewableItems);
+    }, []);
+
     return (
         <View style = {styles.root}>
             <FlatList
@@ -11,8 +19,7 @@ const ImageCarousel = ({images}: {images: [string]}) => {
             renderItem={({item}) => (
                 <Image 
                 style = {[styles.image, {width: windowWidth - 40}]} 
-                source={{uri: item}} 
-                
+                source={{uri: item}}
                 /> 
             )}
             horizontal
@@ -23,9 +30,7 @@ const ImageCarousel = ({images}: {images: [string]}) => {
             viewabilityConfig={{
                 viewAreaCoveragePercentThreshold: 50,
             }}
-            onViewableItemsChanged={({viewableItems}) => {
-                console.log(viewableItems);
-            }}
+            onViewableItemsChanged={onFlatlistUpdate}
             />     
             <View style = {styles.dots}>
                 {images.map((image, index) => (

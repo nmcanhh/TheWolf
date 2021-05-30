@@ -1,6 +1,7 @@
 import React from 'react';
-import {Image, View, Text} from 'react-native';
+import {Image, View, Text, Pressable} from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import {useNavigation} from '@react-navigation/native'
 import styles from './styles';
 
 interface ProductItemProps {
@@ -16,8 +17,13 @@ interface ProductItemProps {
 }
 
 const ProductItem = ({item}: ProductItemProps) => {
+    const navigation = useNavigation();
+
+    const onPress = () => {
+        navigation.navigate('ProductDetails', {id: item.id});
+    }
     return (
-        <View style = {styles.root}>
+        <Pressable onPress={onPress} style = {styles.root}>
                 <Image style = {styles.image} source={{ uri: item.image }}/> 
                 <View style = {styles.rightContainer} >
                 <Text style = {styles.title} numberOfLines={3}>{item.title}</Text>
@@ -31,7 +37,7 @@ const ProductItem = ({item}: ProductItemProps) => {
                 {item.oldPrice && (<Text style = {styles.oldPrice}> ${item.oldPrice}</Text>)}
                 </Text>
                 </View>
-            </View>
+            </Pressable>
     );
 };
 export default ProductItem;
