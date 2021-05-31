@@ -1,13 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import {Text, ScrollView, ActivityIndicator} from 'react-native';
 import {Picker} from '@react-native-picker/picker';
-import {useRoute} from '@react-navigation/native';
+import {useRoute, useNavigation} from '@react-navigation/native';
 import {DataStore, Auth} from 'aws-amplify';
 import {Product, CartProduct} from '../../models';
 
 import styles from './styles';
 import QuantitySelector from '../../components/QuantitySelector';
-import product from '../../data/product';
 import Button from '../../components/Button';
 import ImageCarousel from '../../components/ImageCarousel';
 
@@ -18,6 +17,7 @@ const ProductScreen = () => {
 
     const [quantity, setQuantity] = useState(1);
 
+    const navigation = useNavigation();
     const route = useRoute();
 
     useEffect(() => {
@@ -47,7 +47,8 @@ const ProductScreen = () => {
           productID: product.id,
         });
 
-        DataStore.save(newCardProduct);
+       await DataStore.save(newCardProduct);
+       navigation.navigate('shoppingCart');
     };
 
     if (!product) {

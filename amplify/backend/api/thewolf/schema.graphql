@@ -21,7 +21,31 @@ type CartProduct @model @auth(rules: [{ allow: public}]) {
 
   productID: ID!
   product: Product @connection(fields: ["productID"])
+
 }
+
+type OrderProduct @model @auth (rules: [{allow: public}]){
+  id: ID! 
+  quantity: Int!
+  option: String
+  
+  productID: ID!
+  product: Product @connection(fields: ["productID"])
+
+  orderID: ID!
+  order: Order @connection(fields: ["orderID"])
+}
+
+type Order @model @auth (rules: [{allow: public}]) {
+  id: ID!
+  userSub: String!
+  
+  fullName: String!
+  phoneNumber: String
+  country: String
+  city: String
+  address: String
+} 
 
 # type Order @model {
 #   id: ID!

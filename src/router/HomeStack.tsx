@@ -24,12 +24,13 @@ const HeaderComponent = ({ searchValue, setSearchValue }: HeaderComponentProps) 
                     padding: 5,
                     backgroundColor: 'white',
                     flexDirection: 'row',
-                    alignItems: 'center'
+                    alignItems: 'center',
+                    borderRadius: 10
                 }}>
                 <Feather name="search" size={20} />
                 <TextInput
                     style={{ height: 40, marginLeft: 10 }}
-                    placeholder="Search..."
+                    placeholder="Tìm kiếm..."
                     value={searchValue}
                     onChangeText={setSearchValue}
                 />
