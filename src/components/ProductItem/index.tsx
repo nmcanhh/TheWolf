@@ -33,8 +33,8 @@ const ProductItem = ({item}: ProductItemProps) => {
                 <Text>{item.ratings}</Text>
             </View>
             <Text style = {styles.price}>
-                from ${item.price}
-                {item.oldPrice && (<Text style = {styles.oldPrice}> ${item.oldPrice}</Text>)}
+                Giá: {item.price.toLocaleString()}₫ 
+                {item.oldPrice && (<Text style = {styles.oldPrice}>   {item.oldPrice.toLocaleString()}₫</Text>)}
                 </Text>
                 </View>
             </Pressable>

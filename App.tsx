@@ -7,28 +7,33 @@
  *
  * @format
  */
- import 'react-native-gesture-handler';
- import React from 'react';
- import {SafeAreaView, View, StatusBar,useColorScheme} from 'react-native';
+import 'react-native-gesture-handler';
+import React from 'react';
+import { SafeAreaView, View, StatusBar, useColorScheme } from 'react-native';
 
- import {Colors} from 'react-native/Libraries/NewAppScreen';
- import Router from './src/router';
- 
+import { Colors } from 'react-native/Libraries/NewAppScreen';
+import Router from './src/router';
 
- const App = () => {
-   const isDarkMode = useColorScheme() === 'dark';
+import Amplify from 'aws-amplify';
+import {withAuthenticator} from 'aws-amplify-react-native';
+import config from './src/aws-exports';
+Amplify.configure(config)
 
-   const backgroundStyle = {
-     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-     flex: 1,
-   };
 
-   return (
-     <View style={backgroundStyle}>
-       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-       <Router/> 
-     </View>
-   );
- };
+const App = () => {
+  const isDarkMode = useColorScheme() === 'dark';
 
- export default App;
+  const backgroundStyle = {
+    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    flex: 1,
+  };
+
+  return (
+    <View style={backgroundStyle}>
+      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+      <Router />
+    </View>
+  );
+};
+
+export default withAuthenticator(App);

@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-thewolf-dev-24224-authRole",
+      "UnauthRoleArn": "arn:aws:iam::441448332939:role/amplify-thewolf-dev-24224-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::441448332939:role/amplify-thewolf-dev-24224-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-thewolf-dev-24224-deployment",
+      "UnauthRoleName": "amplify-thewolf-dev-24224-unauthRole",
+      "StackName": "amplify-thewolf-dev-24224",
+      "StackId": "arn:aws:cloudformation:us-east-1:441448332939:stack/amplify-thewolf-dev-24224/2baae700-c17f-11eb-a377-0aac80a39b9b",
+      "AmplifyAppId": "d25x2xt5aml1v1"
+    },
+    "categories": {
+      "auth": {
+        "thewolfcef7058b": {}
+      }
+    }
+  }
+}
