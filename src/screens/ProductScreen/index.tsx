@@ -41,7 +41,7 @@ const ProductScreen = () => {
         }
 
         const newCardProduct = new CartProduct({
-          userSub: userData.attributes.sub, 
+          userSub: userData.attributes.sub,
           quantity,
           option: selectedOption,
           productID: product.id,
@@ -69,28 +69,29 @@ const ProductScreen = () => {
                     <Picker.Item label={option} value={option}/>
                 ))}
             </Picker>
-           
+
             {/* Price  */}
             <Text style = {styles.price}>
-                Giá: {product.price.toLocaleString()}₫    
-                 {product.oldPrice && (<Text style = {styles.oldPrice}> {product.oldPrice.toLocaleString()}₫</Text>)}
+                Giá: {product.price.toLocaleString()}$
+                 {product.oldPrice && (<Text style = {styles.oldPrice}> {product.oldPrice.toLocaleString()}$</Text>)}
                 </Text>
-            
+
             {/* Description  */}
             <Text style = {styles.description}>{product.description}</Text>
-           
+
             {/* Quantity Selector  */}
             <QuantitySelector quantity = {quantity} setQuantity = {setQuantity}/>
-           
+
             {/* Button  */}
             {/* <Button text={'Add to cart'} onPress={() => {}}/>        */}
-            <Button 
-                text={'Thêm vào giỏ hàng'} 
+            <Button
+                text={'Thêm vào giỏ hàng'}
                 onPress={onAddToCart}
                 containerStyles={{
-                    backgroundColor: '#e3c905'}}    
-                    />       
-            <Button text={'Mua ngay'} onPress={() => {console.warn('Mua ngay')}}/>     
+                    backgroundColor: '#FFBA00'}}
+                    />
+            <Button text={'Mua ngay'} containerStyles={{
+                    backgroundColor: '#fc9807'}} onPress={() => {console.warn('Mua ngay')}}/>
 
             </ScrollView>
     );

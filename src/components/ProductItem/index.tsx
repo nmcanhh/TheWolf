@@ -24,7 +24,7 @@ const ProductItem = ({item}: ProductItemProps) => {
     }
     return (
         <Pressable onPress={onPress} style = {styles.root}>
-                <Image style = {styles.image} source={{ uri: item.image }}/> 
+                <Image style = {styles.image} source={{ uri: item.image }}/>
                 <View style = {styles.rightContainer} >
                 <Text style = {styles.title} numberOfLines={3}>{item.title}</Text>
             {/**Ratings */}
@@ -33,8 +33,8 @@ const ProductItem = ({item}: ProductItemProps) => {
                 <Text>{item.ratings}</Text>
             </View>
             <Text style = {styles.price}>
-                Giá: {item.price.toLocaleString()}₫ 
-                {item.oldPrice && (<Text style = {styles.oldPrice}>   {item.oldPrice.toLocaleString()}₫</Text>)}
+                Giá: {item.price.toLocaleString()}$
+                {item.oldPrice && (<Text style = {styles.oldPrice}>   {item.oldPrice.toLocaleString()}$</Text>)}
                 </Text>
                 </View>
             </Pressable>

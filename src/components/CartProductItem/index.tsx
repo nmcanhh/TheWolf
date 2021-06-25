@@ -47,9 +47,9 @@ const CartProductItem = ({ cartItem }: CartProductItemProps) => {
             <Text>{product.ratings}</Text>
           </View>
           <Text style={styles.price}>
-            Giá: {product.price.toLocaleString()}₫
+            Giá: {product.price.toLocaleString()}$
             {product.oldPrice && (
-              <Text style={styles.oldPrice}> {product.oldPrice.toLocaleString()}₫</Text>
+              <Text style={styles.oldPrice}> {product.oldPrice.toLocaleString()}$</Text>
             )}
           </Text>
         </View>

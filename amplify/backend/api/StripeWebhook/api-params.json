@@ -1,0 +1,35 @@
+{
+  "paths": [
+    {
+      "name": "/stripe-webhook",
+      "lambdaFunction": "StripeWebhook",
+      "privacy": {
+        "open": true
+      },
+      "policyResourceName": "/stripe-webhook"
+    }
+  ],
+  "resourceName": "StripeWebhook",
+  "apiName": "StripeWebhook",
+  "functionArns": [
+    {
+      "lambdaFunction": "StripeWebhook"
+    }
+  ],
+  "privacy": {
+    "auth": 0,
+    "unauth": 0,
+    "authRoleName": "amplify-thewolf-dev-24224-authRole",
+    "unAuthRoleName": "amplify-thewolf-dev-24224-unauthRole"
+  },
+  "dependsOn": [
+    {
+      "category": "function",
+      "resourceName": "StripeWebhook",
+      "attributes": [
+        "Name",
+        "Arn"
+      ]
+    }
+  ]
+}

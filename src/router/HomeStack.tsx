@@ -17,7 +17,7 @@ interface HeaderComponentProps {
 
 const HeaderComponent = ({ searchValue, setSearchValue }: HeaderComponentProps) => {
     return (
-        <SafeAreaView style={{ backgroundColor: '#22e3dd' }}>
+        <SafeAreaView style={{ backgroundColor: '#FFBA00' }}>
             <View
                 style={{
                     margin: 10,

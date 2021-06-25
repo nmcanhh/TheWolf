@@ -17,10 +17,10 @@ const ImageCarousel = ({images}: {images: string[]}) => {
             <FlatList
             data={images}
             renderItem={({item}) => (
-                <Image 
-                style = {[styles.image, {width: windowWidth - 40}]} 
+                <Image
+                style = {[styles.image, {width: windowWidth - 40}]}
                 source={{uri: item}}
-                /> 
+                />
             )}
             horizontal
             showsHorizontalScrollIndicator={false}
@@ -31,10 +31,10 @@ const ImageCarousel = ({images}: {images: string[]}) => {
                 viewAreaCoveragePercentThreshold: 50,
             }}
             onViewableItemsChanged={onFlatlistUpdate}
-            />     
+            />
             <View style = {styles.dots}>
                 {images.map((image, index) => (
-                    <View 
+                    <View
                     style = {[
                         styles.dot, {
                             backgroundColor: index == activeIndex ? '#c9c9c9' : '#ededed'

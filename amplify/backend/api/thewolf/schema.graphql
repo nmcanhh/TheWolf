@@ -1,4 +1,13 @@
-type Product @model @auth(rules: [{ allow: public}]) {
+type Mutation {
+  createPaymentIntent(amount: Int!): PaymentIntent!
+    @function(name: "CreatePaymentIntent-${env}")
+}
+
+type PaymentIntent {
+  clientSecret: String!
+}
+
+type Product @model @auth(rules: [{ allow: public }]) {
   id: ID!
   title: String!
   description: String
@@ -13,7 +22,7 @@ type Product @model @auth(rules: [{ allow: public}]) {
   oldPrice: Float
 }
 
-type CartProduct @model @auth(rules: [{ allow: public}]) {
+type CartProduct @model @auth(rules: [{ allow: public }]) {
   id: ID!
   userSub: String!
   quantity: Int!
@@ -21,14 +30,13 @@ type CartProduct @model @auth(rules: [{ allow: public}]) {
 
   productID: ID!
   product: Product @connection(fields: ["productID"])
-
 }
 
-type OrderProduct @model @auth (rules: [{allow: public}]){
-  id: ID! 
+type OrderProduct @model @auth(rules: [{ allow: public }]) {
+  id: ID!
   quantity: Int!
   option: String
-  
+
   productID: ID!
   product: Product @connection(fields: ["productID"])
 
@@ -36,26 +44,22 @@ type OrderProduct @model @auth (rules: [{allow: public}]){
   order: Order @connection(fields: ["orderID"])
 }
 
-type Order @model @auth (rules: [{allow: public}]) {
+type Order @model @auth(rules: [{ allow: public }]) {
   id: ID!
   userSub: String!
-  
+
   fullName: String!
   phoneNumber: String
   country: String
   city: String
   address: String
-} 
+}
 
 # type Order @model {
 #   id: ID!
 #   userSub: String!
 
 # }
-
-
-
-
 
 # type Blog @model {
 #   id: ID!

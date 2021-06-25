@@ -10,6 +10,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "@expo/metro-config": "^0.1.72",
     "@react-native-async-storage/async-storage": "^1.15.4",
     "@react-native-community/masked-view": "^0.1.11",
     "@react-native-community/netinfo": "^6.0.0",
@@ -17,6 +18,7 @@
     "@react-navigation/bottom-tabs": "^5.11.11",
     "@react-navigation/native": "^5.9.4",
     "@react-navigation/stack": "^5.14.5",
+    "@stripe/stripe-react-native": "^0.1.4",
     "amazon-cognito-identity-js": "^5.0.2",
     "aws-amplify": "^4.0.3",
     "aws-amplify-react-native": "^5.0.1",
@@ -39,6 +41,7 @@
     "babel-jest": "^26.6.3",
     "eslint": "^7.14.0",
     "jest": "^26.6.3",
+    "metro-config": "^0.64.0",
     "metro-react-native-babel-preset": "^0.64.0",
     "react-test-renderer": "17.0.1",
     "typescript": "^3.8.3"

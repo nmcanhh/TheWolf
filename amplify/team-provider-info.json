@@ -14,6 +14,16 @@
     "categories": {
       "auth": {
         "thewolfcef7058b": {}
+      },
+      "function": {
+        "CreatePaymentIntent": {
+          "deploymentBucketName": "amplify-thewolf-dev-24224-deployment",
+          "s3Key": "amplify-builds/CreatePaymentIntent-67473675464335377257-build.zip"
+        },
+        "StripeWebhook": {
+          "deploymentBucketName": "amplify-thewolf-dev-24224-deployment",
+          "s3Key": "amplify-builds/StripeWebhook-45592f4f774e532b4c6f-build.zip"
+        }
       }
     }
   }

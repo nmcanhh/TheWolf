@@ -1,6 +1,6 @@
 projects:
   thewolf:
-    schemaPath: src/graphql/schema.json
+    schemaPath: amplify/backend/api/thewolf/build/schema.graphql
     includes:
       - src/graphql/**/*.ts
     excludes:

@@ -96,7 +96,7 @@ const ShopingCartScreen = () => {
   );
 
   const onCheckout = () => {
-    navigation.navigate('Address', { totalPrice });
+    navigation.navigate('Address', {totalPrice});
   };
 
   if (cartProducts.filter(cp => !cp.product).length !== 0) {
@@ -115,14 +115,14 @@ const ShopingCartScreen = () => {
             <Text style={{ fontSize: 18 }}>
               Tổng tiền ({cartProducts.length} món):{' '}
               <Text style={{ color: '#e47911', fontWeight: 'bold' }}>
-                {totalPrice.toLocaleString()}₫
+                {totalPrice.toLocaleString()}$
               </Text>
             </Text>
             <Button
               text="Thanh toán"
               onPress={onCheckout}
               containerStyles={{
-                backgroundColor: '#f7e300',
+                backgroundColor: '#FFBA00',
                 borderColor: '#c7b702',
               }}
             />
